@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -55,38 +55,13 @@
         opacity: 0.3;
       }
     }
-
-    #playBtn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 15px 25px;
-      background: #ffd700;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-family: monospace;
-      z-index: 10;
-      cursor: pointer;
-      animation: pulse 2s infinite;
-    }
-
-    #playBtn:active {
-      transform: translate(-50%, -50%) scale(0.98);
-    }
   </style>
 </head>
 <body>
-
-  <!-- 🎵 Música de fondo -->
-  <audio id="bgMusic" loop>
-    <source src="cancion.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-
-  <!-- 🔘 Botón para reproducir -->
-  <button id="playBtn" onclick="playMusic()">▶ Escuchar música</button>
+<audio controls>
+  <source src="MiViernes13.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
 
   <canvas id="canvas"></canvas>
 
@@ -95,12 +70,6 @@
   </div>
 
   <script>
-    function playMusic() {
-      const audio = document.getElementById("bgMusic");
-      audio.play();
-      document.getElementById("playBtn").style.display = "none";
-    }
-
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     const fontSize = 16;
@@ -110,6 +79,7 @@
     let drops = new Array(columns).fill(1);
     const colors = ['#ffd700', '#ffcc00', '#ffdf00', '#f5d000', '#ffea00', '#fff200', '#ffff00', '#ffde59'];
 
+    // Corazones flotantes
     const hearts = [];
 
     function createHeart() {
@@ -134,6 +104,8 @@
       ctx.globalAlpha = 1;
     }
 
+    // Fuegos artificiales
+
     document.body.addEventListener("click", () => {
       for (let i = 0; i < 5; i++) {
         setTimeout(createExplosion, i * 200);
@@ -141,7 +113,7 @@
     });
 
     function createExplosion() {
-      const count = 5 + Math.floor(Math.random() * 5);
+      const count = 05 + Math.floor(Math.random() * 05);
       const x = Math.random() * canvas.width * 0.8 + canvas.width * 0.1;
       const y = Math.random() * canvas.height * 0.5 + canvas.height * 0.1;
       for (let i = 0; i < count; i++) {
@@ -232,4 +204,4 @@
   </script>
 
 </body>
-</html>>
+</html>
